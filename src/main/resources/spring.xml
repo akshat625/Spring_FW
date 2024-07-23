@@ -7,7 +7,20 @@
 
     <!--Beans are the objects managed by spring framework-->
 
-    <bean id="per1" class="com.akshat.Person">
+
+
+<!--    <bean id="per1" class="com.akshat.Person" autowire="byName">-->
+<!--        autowire search for object reference name without implementing property for reference-->
+<!--        But autowire works only when we don't use property for object reference-->
+
+  <bean id="per1" class="com.akshat.Person" autowire="byType">
+<!--        If we use autowire=byType, it searches by the type(here Computer) -->
+<!--        But there is a problem, what if there is two bean of same type(here, Laptop and Desktop are type of Computer)-->
+<!--        For solving this problem, we can use primary="true" in a bean tag -->
+<!--  Note: In both byName and byType, if we add property for object reference, it takes preference -->
+        <property name="age" value="21"></property>
+<!--        <property name="com" ref="com2"></property>-->
+
 
                     <!--setter injection-->
 <!--        use property-->
@@ -20,7 +33,7 @@
 <!--        ref laptop is same as id for Laptop bean.-->
 <!--        there must be a bean for Laptop reference -->
 <!--        -->
-<!--        <property name="lap" ref="laptop"></property>-->
+<!--        <property name="com" ref="laptop"></property>-->
 
 
                     <!--constructor injection-->
@@ -33,8 +46,8 @@
 <!--        <constructor-arg type="int" value="21"/>-->
 
 <!--         IInd: give the index of constructor(Ideal Way)-->
-        <constructor-arg index="1" ref="laptop"/>
-        <constructor-arg index="0" value="21"/>
+<!--        <constructor-arg index="1" ref="laptop"/>-->
+<!--        <constructor-arg index="0" value="21"/>-->
 
 <!--        IIIrd: give the name, but this also follows the sequencing-->
 <!--        <constructor-arg name="age" value="21"/>-->
@@ -43,7 +56,10 @@
 
     </bean>
 
-    <bean id="laptop" class="com.akshat.Laptop">
+    <bean id="com" class="com.akshat.Laptop" primary="true">
+    </bean>
+
+    <bean id="com2" class="com.akshat.Desktop">
     </bean>
 
 <!--scope is used to create multiple objects using getBean. Most common scope is Singleton and prototype-->

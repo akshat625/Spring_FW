@@ -3,41 +3,40 @@ package com.akshat;
 public class Person {
     private int age;
 
-    Laptop lap;
+    Computer com;
 
-    public Person(int age, Laptop lap) {
-        this.age = age;
-        this.lap = lap;
-    }
+//    public Person() {
+//        System.out.println("Object Created");
+//    }
+//    public Person(int age, Computer com) {
+//        this.age = age;
+//        this.com = com;
+//    }
 
-    public Laptop getLap() {
-        return lap;
-    }
+//    public Person(int age) {
+//        this.age = age;
+//    }
 
-    public Person(int age) {
-        this.age = age;
-    }
-
-    public void setLap(Laptop lap) {
-        this.lap = lap;
-    }
-
-    public Person() {
-        System.out.println("Object Created");
-    }
 
     public int getAge() {
         return age;
     }
 
     public void setAge(int age) {
-        System.out.println("setter called");
         this.age = age;
+    }
+
+    public Computer getCom() {
+        return com;
+    }
+
+    public void setCom(Computer com) {
+        this.com = com;
     }
 
     public void code(){
         System.out.println("Coding");
-        lap.compile();
+        com.compile();
 
     }
 }
