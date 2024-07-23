@@ -15,9 +15,18 @@ public class App
         //this line creates a container
         //this is where objects were created by looking xml files
         ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
+
+
         //getBean give object from container.
         //Since its return type is Object, we have to typecast it
-        Person per = (Person) context.getBean("per");
-        per.code();
+        Person per1 = (Person) context.getBean("per1");
+//        per1.setAge(21);
+        System.out.println(per1.getAge());
+        per1.code();
+//        if we write getBean multiple time, it creates only one object
+//        for creating multiple object, use scope as prototype in xml
+//        Person per2 = (Person) context.getBean("per1");
+
+
     }
 }

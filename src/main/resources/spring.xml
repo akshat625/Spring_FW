@@ -6,11 +6,33 @@
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!--Beans are the objects managed by spring framework-->
-    <bean id="per" class="com.akshat.Person">
+
+    <bean id="per1" class="com.akshat.Person">
+
+                    <!--setter injection-->
+<!--        this will call setter-->
+<!--        value is for primitive-->
+        <property name="age" value="21"></property>
+<!--        ref is for reference-->
+<!--        ref laptop is same as id for Laptop bean.-->
+<!--        there must be a bean for Laptop reference -->
+        <property name="lap" ref="laptop"></property>
+
     </bean>
 
     <bean id="laptop" class="com.akshat.Laptop">
     </bean>
+
+<!--scope is used to create multiple objects using getBean. Most common scope is Singleton and prototype-->
+<!--by default scope is singleton-->
+<!--    <bean id="per1" class="com.akshat.Person" scope="prototype">-->
+<!--    </bean>-->
+
+<!--    if we create two bean of same class,it will create two objects-->
+<!--    <bean id="per2" class="com.akshat.Person">-->
+<!--    </bean>-->
+
+
 
 </beans>
 
