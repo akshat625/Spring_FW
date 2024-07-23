@@ -15,9 +15,12 @@ public class App
         //by-default name of the bean is name of the method we write in AppConfig file
         //to change the name we can pass argument in Bean annotation in AppConfig file
 
-        Desktop dt = context.getBean(Desktop.class);
-        dt.compile();
-        Desktop dt1 = context.getBean(Desktop.class);
+//        Desktop dt = context.getBean(Desktop.class);
+//        dt.compile();
+//        Desktop dt1 = context.getBean(Desktop.class);
+
+        Person per = context.getBean(Person.class);
+        per.code();
 
 
 

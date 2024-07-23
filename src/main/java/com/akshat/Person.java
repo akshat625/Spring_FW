@@ -5,9 +5,9 @@ public class Person {
 
     Computer com;
 
-//    public Person() {
-//        System.out.println("Object Created");
-//    }
+    public Person() {
+        System.out.println("Person Object Created");
+    }
 //    public Person(int age, Computer com) {
 //        this.age = age;
 //        this.com = com;
