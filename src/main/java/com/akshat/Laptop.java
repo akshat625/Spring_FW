@@ -5,6 +5,7 @@ public class Laptop implements Computer {
 //        System.out.println("Laptop object created");
 //    }
 
+
     public void compile(){
         System.out.println("Compiling using Laptop");
     }
