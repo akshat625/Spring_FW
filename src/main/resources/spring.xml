@@ -21,7 +21,7 @@
 <!--        For solving this problem, we can use primary="true" in a bean tag -->
 <!--  Note: In both byName and byType, if we add property for object reference, it takes preference -->
 
-        <property name="age" value="21"></property>
+        <property name="age" value="21" />
 <!--        <property name="com" ref="com2"></property>-->
 
 
