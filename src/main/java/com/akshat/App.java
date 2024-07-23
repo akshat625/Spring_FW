@@ -19,7 +19,11 @@ public class App
 
         //getBean give object from container.
         //Since its return type is Object, we have to typecast it
-        Person per1 = (Person) context.getBean("per1");
+//        Person per1 = (Person) context.getBean("per1");
+
+        //Or we can also pass another argument Person.class for avoiding typecasting
+        Person per1 = context.getBean("per1", Person.class);
+
 //        per1.setAge(21);
         System.out.println(per1.getAge());
         per1.code();

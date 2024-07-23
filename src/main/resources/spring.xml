@@ -9,49 +9,66 @@
 
 
 
-<!--    <bean id="per1" class="com.akshat.Person" autowire="byName">-->
+    <bean id="per1" class="com.akshat.Person" autowire="byName">
+
 <!--        autowire search for object reference name without implementing property for reference-->
 <!--        But autowire works only when we don't use property for object reference-->
 
-  <bean id="per1" class="com.akshat.Person" autowire="byType">
+<!--        <bean id="per1" class="com.akshat.Person" autowire="byType">-->
+
 <!--        If we use autowire=byType, it searches by the type(here Computer) -->
 <!--        But there is a problem, what if there is two bean of same type(here, Laptop and Desktop are type of Computer)-->
 <!--        For solving this problem, we can use primary="true" in a bean tag -->
 <!--  Note: In both byName and byType, if we add property for object reference, it takes preference -->
+
         <property name="age" value="21"></property>
 <!--        <property name="com" ref="com2"></property>-->
 
 
+
+ <!--___________________________________________________________________________________________________________________________-->
+
+
+
                     <!--setter injection-->
-<!--        use property-->
-<!--        this will call setter-->
-<!--        value is for primitive-->
-<!--        -->
-<!--        <property name="age" value="21"></property>-->
-<!--        -->
-<!--        ref is for reference-->
-<!--        ref laptop is same as id for Laptop bean.-->
-<!--        there must be a bean for Laptop reference -->
-<!--        -->
-<!--        <property name="com" ref="laptop"></property>-->
+<!--    use property
+        this will call setter
+        value is for primitive
+
+        <property name="age" value="21"></property>
+
+        ref is for reference
+        ref laptop is same as id for Laptop bean.
+        there must be a bean for Laptop reference
+
+        <property name="com" ref="laptop"></property>-->
 
 
-                    <!--constructor injection-->
-<!--        use constructor-arg -->
-<!--        this check according to sequence of constructor, if we not follow the order, there will be error-->
-<!--        for random order, there is three methods-->
 
-<!--        Ist: give the type, but it will create problem if there are multiple parameter with same type -->
-<!--        <constructor-arg type="com.akshat.Laptop" ref="laptop"/>-->
-<!--        <constructor-arg type="int" value="21"/>-->
 
-<!--         IInd: give the index of constructor(Ideal Way)-->
-<!--        <constructor-arg index="1" ref="laptop"/>-->
-<!--        <constructor-arg index="0" value="21"/>-->
+<!--___________________________________________________________________________________________________________________________-->
 
-<!--        IIIrd: give the name, but this also follows the sequencing-->
-<!--        <constructor-arg name="age" value="21"/>-->
-<!--        <constructor-arg name="lap" ref="laptop"/>-->
+
+
+
+
+                                 <!--constructor injection-->
+<!--    use constructor-arg
+        this check according to sequence of constructor, if we not follow the order, there will be error
+        for random order, there is three methods
+
+        Ist: give the type, but it will create problem if there are multiple parameter with same type
+        <constructor-arg type="com.akshat.Laptop" ref="laptop"/>
+        <constructor-arg type="int" value="21"/>
+
+         IInd: give the index of constructor(Ideal Way)
+        <constructor-arg index="1" ref="laptop"/>
+        <constructor-arg index="0" value="21"/>
+
+        IIIrd: give the name, but this also follows the sequencing
+        <constructor-arg name="age" value="21"/>
+        <constructor-arg name="lap" ref="laptop"/>
+        -->
 
 
     </bean>
@@ -62,14 +79,33 @@
     <bean id="com2" class="com.akshat.Desktop">
     </bean>
 
-<!--scope is used to create multiple objects using getBean. Most common scope is Singleton and prototype-->
-<!--by default scope is singleton-->
-<!--    <bean id="per1" class="com.akshat.Person" scope="prototype">-->
-<!--    </bean>-->
+<!--___________________________________________________________________________________________________________________________-->
 
-<!--    if we create two bean of same class,it will create two objects-->
-<!--    <bean id="per2" class="com.akshat.Person">-->
-<!--    </bean>-->
+
+<!--                            Lazy Bean
+
+    Whenever the App class loads, it creates all the objects from the xml file, even if the objects are not in use
+    But what if we want some objects not to be created until they are requested using getBean?
+    Then we can use lazy-init="true"
+    Note: But if any object is dependent on lazy object, then spring creates lazy object anyway, even if we use lazy-init
+
+    <bean id="com2" class="com.akshat.Desktop" lazy-init="true">
+    </bean>-->
+
+
+    <!--___________________________________________________________________________________________________________________________-->
+
+
+<!--
+    scope is used to create multiple objects using getBean. Most common scope is Singleton and prototype
+    by default scope is singleton
+    <bean id="per1" class="com.akshat.Person" scope="prototype">
+    </bean>
+
+    if we create two bean of same class,it will create two objects
+    <bean id="per2" class="com.akshat.Person">
+    </bean>
+-->
 
 
 
