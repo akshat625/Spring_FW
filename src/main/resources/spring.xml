@@ -93,7 +93,28 @@
     </bean>-->
 
 
-    <!--___________________________________________________________________________________________________________________________-->
+<!--___________________________________________________________________________________________________________________________-->
+
+
+    <!--                        Inner Bean
+        Inner beans are beans that are defined within the scope of another bean.
+        This approach is useful when you want to create beans that are not shared with other beans and are only used within the bean in which they are defined.
+        Inner beans are typically used for encapsulation and to hide the complexity of certain dependencies.
+
+        <bean id="per1" class="com.akshat.Person">
+
+            <property name="age" value="21"></property>
+            <property name="com">
+                <bean id="com" class="com.akshat.Laptop" primary="true">
+                </bean>
+            </property>
+
+        </bean>
+
+    -->
+
+<!--___________________________________________________________________________________________________________________________-->
+
 
 
 <!--
