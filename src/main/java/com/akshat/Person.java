@@ -5,8 +5,17 @@ public class Person {
 
     Laptop lap;
 
+    public Person(int age, Laptop lap) {
+        this.age = age;
+        this.lap = lap;
+    }
+
     public Laptop getLap() {
         return lap;
+    }
+
+    public Person(int age) {
+        this.age = age;
     }
 
     public void setLap(Laptop lap) {

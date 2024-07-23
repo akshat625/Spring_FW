@@ -10,13 +10,36 @@
     <bean id="per1" class="com.akshat.Person">
 
                     <!--setter injection-->
+<!--        use property-->
 <!--        this will call setter-->
 <!--        value is for primitive-->
-        <property name="age" value="21"></property>
+<!--        -->
+<!--        <property name="age" value="21"></property>-->
+<!--        -->
 <!--        ref is for reference-->
 <!--        ref laptop is same as id for Laptop bean.-->
 <!--        there must be a bean for Laptop reference -->
-        <property name="lap" ref="laptop"></property>
+<!--        -->
+<!--        <property name="lap" ref="laptop"></property>-->
+
+
+                    <!--constructor injection-->
+<!--        use constructor-arg -->
+<!--        this check according to sequence of constructor, if we not follow the order, there will be error-->
+<!--        for random order, there is three methods-->
+
+<!--        Ist: give the type, but it will create problem if there are multiple parameter with same type -->
+<!--        <constructor-arg type="com.akshat.Laptop" ref="laptop"/>-->
+<!--        <constructor-arg type="int" value="21"/>-->
+
+<!--         IInd: give the index of constructor(Ideal Way)-->
+        <constructor-arg index="1" ref="laptop"/>
+        <constructor-arg index="0" value="21"/>
+
+<!--        IIIrd: give the name, but this also follows the sequencing-->
+<!--        <constructor-arg name="age" value="21"/>-->
+<!--        <constructor-arg name="lap" ref="laptop"/>-->
+
 
     </bean>
 
