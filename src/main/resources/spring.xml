@@ -1,0 +1,17 @@
+<!--bean configuration -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--Beans are the objects managed by spring framework-->
+    <bean id="per" class="com.akshat.Person">
+    </bean>
+
+    <bean id="laptop" class="com.akshat.Laptop">
+    </bean>
+
+</beans>
+
+
